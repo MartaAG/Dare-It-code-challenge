@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from 'react';
+import Checkbox from '../atom/checkbox';
 
 import Input from '../atom/input';
 import Submit from '../atom/submit';
 
-function Form({initialData, onSubmit}) {
+function Form({initialData, onSubmit, rememberMe, onChange}) {
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
-    const [rememberMe, setRememberMe] = useState(false)
+    
+
 
     const handleSubmit = () => {
         console.log(login, password)
@@ -28,8 +30,8 @@ function Form({initialData, onSubmit}) {
     <div className="App">
       <Input name="login" value={login} onChange={(ev) => {setLogin(ev.target.value)}}/>
       <Input name="password" value={password} onChange={(ev) => {setPassword(ev.target.value)}}/>
-     {/*  /** Remember me checkbox  */}
       <Submit onClick={handleSubmit}/>
+      <Checkbox label={"Remember me"} onChange={onChange} value={rememberMe}/>
     </div>
   );
 }
