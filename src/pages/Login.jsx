@@ -4,6 +4,7 @@ import Form from '../components/organism/Form';
 
 const Login = () => {
     const [initialData, setInitialData] = useState(undefined);
+    const [rememberMe, setRememberMe] = useState(true);
    
     useEffect(() => {
         const savedData = localStorage.getItem('loginData');
@@ -12,17 +13,22 @@ const Login = () => {
         }
     }, [])
 
-    const onSubmit = (loginData, remeberMe) => {
-        if(remeberMe){
+    const onSubmit = (loginData, rememberMe) => {
+        if(rememberMe) {
             localStorage.setItem('loginData', JSON.stringify(loginData));
         }
         console.log('send to api', loginData)
     }
 
+    const handleCheckbox = () => {
+        setRememberMe(false)
+    }
+
+
     return (
         <div>
             <Header/>
-            <Form onSubmit={onSubmit} initialData={initialData}/>
+            <Form onSubmit={onSubmit} onChange={handleCheckbox} initialData={initialData} rememberMe={rememberMe}/>
            
         </div>
     )
