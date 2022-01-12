@@ -26,15 +26,16 @@ const Login = () => {
         console.log('send to api', loginData)
     }
 
-    const handleCheckbox = () => {
-        setRememberMe(false)
+    const handleCheckbox = (ev) => {
+
+        setRememberMe(ev.target.checked)
     }
 
 
     return (
         <div>
             <Header/>
-            <Form onSubmit={onSubmit} onChange={handleCheckbox} initialData={initialData} rememberMe={rememberMe}/>
+            <Form onSubmit={onSubmit} onRememberMeChange={handleCheckbox} initialData={initialData} rememberMe={rememberMe}/>
            
         </div>
     )
