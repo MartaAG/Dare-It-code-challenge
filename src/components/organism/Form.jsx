@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import Checkbox from '../atom/checkbox';
 
 import Input from '../atom/input';
-import Submit from '../atom/submit';
+import Submit from '../atom/submit'
+import Checkbox from '../atom/checkbox/checkbox'
+
 
 function Form({initialData, onSubmit, rememberMe, onRememberMeChange}) {
     const [login, setLogin] = useState('')
@@ -24,7 +25,6 @@ function Form({initialData, onSubmit, rememberMe, onRememberMeChange}) {
         setLogin(initialData?.login)
       }
     }, [initialData])
-
     
   return (
     <div className="App">
