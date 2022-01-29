@@ -5,7 +5,7 @@ export default {
     title: 'atom/checkbox',
     component: Checkbox,
     argTypes: {
-        label:'remind me', onChange:() => {console.log('works')}, value: false},
+        label:'remind me',  onChange: { action: 'clicked'}  , value: false},
 };
 
 const Template = (args) => <Checkbox {...args} />;
@@ -15,7 +15,6 @@ export const Checked = Template.bind({});
 Checked.args = {
     label:'', 
     value: true,
-    onChange:() => {console.log('works')}, 
     value: true
 };
 
