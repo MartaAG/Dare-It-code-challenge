@@ -2,9 +2,16 @@ import React from 'react';
 import Card from '../molecule/Card';
 
 
-function Movies() {
+
+function Movies({moviesData}) {
   return (
-    <Card/>
+    <>
+    {moviesData.map((mv) => {
+      return (
+        <Card title={mv.title} id={mv.id} description={mv.description} image={mv.image}/>
+      )
+    })}
+    </>
   );
 }
 

@@ -2,10 +2,10 @@ import React from 'react';
 import { Image, } from "@chakra-ui/react";
 
 
-function Photo() {
+function Photo({image}) {
   return (
 
-      <Image borderRadius="md" src="https://bit.ly/2k1H1t6" />
+      <Image borderRadius="md" src={image} />
      
   );
 }

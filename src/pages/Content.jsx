@@ -1,5 +1,7 @@
 import React from 'react';
 import {useQuery} from 'react-query'
+import Movies from '../components/organism/Movies';
+import { SimpleGrid, Center } from '@chakra-ui/react'
 
 
 function Content() {
@@ -17,7 +19,11 @@ function Content() {
 
   return (
     <div >
-        <h1>content</h1>
+      <Center>
+      <SimpleGrid columns={[2, null, 5]} spacing='40px'>
+        <Movies moviesData={data}/>
+      </SimpleGrid>
+      </Center>
     </div>
   );
 }
