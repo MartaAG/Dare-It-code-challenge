@@ -5,7 +5,7 @@ import Login from './pages/Login'
 import { Routes, Route,} from "react-router-dom";
 import Home from "./pages/Home"
 import Content from './pages/Content'
-import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
+import { QueryClient, QueryClientProvider } from 'react-query'
 import Movies from './components/organism/Movies';
 import Movie from './components/organism/Movie';
  
