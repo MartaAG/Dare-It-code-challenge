@@ -16,12 +16,17 @@ const Container = styled.div`
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-
+    align-items: flex-start;
 `
 
 
 const Subtitle = styled(Title)`
     font-size: 14px;
+`
+
+const Description = styled.div`
+    font-size:12px;
+    text-align: left;
 `
 
 const MovieDetails = ({movie}) => {
@@ -31,7 +36,8 @@ const MovieDetails = ({movie}) => {
             <Wrapper>
                 <TitleComponent title={movie.title}/>
                 <Subtitle>{movie.original_title}</Subtitle>
-                <div>{movie.description}</div>
+                <Subtitle>{movie.release_date}</Subtitle>
+                <Description>{movie.description}</Description>
             </Wrapper>
         </Container>
         
