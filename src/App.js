@@ -7,6 +7,7 @@ import Home from "./pages/Home"
 import Content from './pages/Content'
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 import Movies from './components/organism/Movies';
+import Movie from './components/organism/Movie';
  
 
 const queryClient = new QueryClient()
@@ -20,7 +21,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path ='/content' element={<Content />} />
         <Route path ='/movies' element={<Movies />} />
-        <Route path ='/movies/:id' element={<Content />} />
+        <Route path ='/movies/:id' element={<Movie />} />
       
       </Routes>
       </QueryClientProvider>

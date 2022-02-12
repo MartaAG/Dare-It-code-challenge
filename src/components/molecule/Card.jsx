@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, SimpleGrid , Flex,} from "@chakra-ui/react";
+import { Box, Flex,} from "@chakra-ui/react";
 import Photo from '../atom/Card/Photo';
 import Description from '../atom/Card/Description';
 import MovieButton from '../atom/Card/MovieButton';
@@ -15,7 +15,7 @@ function Card({title, id, description, image}) {
       <Description title={title} description={description}/>
       <Flex mt={2} align="center">
       </Flex>
-        <MovieButton/>
+        <MovieButton id={id} title={title}/>
     </Box>
   );
 }
