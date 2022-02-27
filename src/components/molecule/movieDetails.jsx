@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import BackButton from '../atom/BackButton';
 import TitleComponent, {Title} from '../atom/NewTitle';
 
 
@@ -38,6 +39,7 @@ const MovieDetails = ({movie}) => {
                 <Subtitle>{movie.original_title}</Subtitle>
                 <Subtitle>{movie.release_date}</Subtitle>
                 <Description>{movie.description}</Description>
+                <BackButton/>
             </Wrapper>
         </Container>
         
