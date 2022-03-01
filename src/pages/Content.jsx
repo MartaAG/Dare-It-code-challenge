@@ -2,7 +2,9 @@ import React from 'react';
 import {useQuery} from 'react-query'
 import Movies from '../components/organism/Movies';
 import { SimpleGrid, Center } from '@chakra-ui/react'
-
+import LoadingBar from '../components/atom/Card/LoadingBar';
+import ErrorBar from '../components/atom/ErrorBar';
+import _ from 'lodash';
 
 function Content() {
 
@@ -12,8 +14,11 @@ function Content() {
             res.json()
           )
         )
-        if (isLoading) return 'Loading...'
-        if (error) return 'An error has occurred: ' + error.message
+        if (isLoading) {
+          return <LoadingBar />}
+        console.log(error)
+        if (!_.isEmpty(error)) {
+          return <ErrorBar error={'an error occured' + error.message}/>}
 
         console.log(data)
 

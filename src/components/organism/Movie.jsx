@@ -1,23 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom'
 import _ from 'lodash';
 import MovieDetails from '../molecule/movieDetails';
 import useMovieHook from '../../hooks/getMovieHook';
+import ErrorBar from '../atom/ErrorBar';
 
 
 
-function Movie({}) {
+function Movie() {
     const {id} = useParams();
-    const {movie} = useMovieHook({id})
-    
-    
+    const {movie, isError} = useMovieHook({id})
 
+    //handle 404 and loading data 
+    
+    
+  console.log(isError)
        
 
   return (
     <div>
-        {_.isEmpty(movie) ? 'loading data' :
-        <MovieDetails movie={movie}/>}
+        {!_.isEmpty(movie) && <MovieDetails movie={movie}/>}
+        {isError && <ErrorBar />  }
     </div>
   );
 }

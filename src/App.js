@@ -8,6 +8,7 @@ import Content from './pages/Content'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import Movies from './components/organism/Movies';
 import Movie from './components/organism/Movie';
+import NotFound from './pages/NotFound';
  
 
 const queryClient = new QueryClient()
@@ -17,6 +18,7 @@ function App() {
     <div className="App">
     <QueryClientProvider client={queryClient}>
       <Routes>
+        <Route path="*" element={<NotFound/>} />
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path ='/content' element={<Content />} />
